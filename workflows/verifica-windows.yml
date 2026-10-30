@@ -1,0 +1,29 @@
+name: Verifica e prepara demo Windows
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - name: Test del codice
+        run: python -m unittest discover -s tests
+      - name: Prepara pacchetto portatile verificato
+        run: python scripts/build_windows.py
+      - name: Prova runtime Windows, PDF e archivio
+        run: python tests/smoke_server.py --package "release/windows/DocFlow Windows"
+      - name: Conserva ZIP nel repository privato
+        uses: actions/upload-artifact@v7
+        with:
+          name: DocFlow-Windows-x64
+          path: release/windows/DocFlow_WINDOWS_x64.zip
+          if-no-files-found: error
+          retention-days: 7
