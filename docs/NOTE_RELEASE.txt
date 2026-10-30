@@ -1,0 +1,14 @@
+DocFlow — Demo Mac e Windows
+
+Assistente Python per classificare e rinominare copie di PDF, con anteprima modificabile e approvazione dell'operatore.
+
+Mac Apple Silicon: scaricare DocFlow_MAC.zip, estrarre e aprire DocFlow.app.
+Windows 10/11 x64 Intel/AMD: scaricare DocFlow_WINDOWS_x64.zip, estrarre TUTTO e aprire APRI DOCFLOW.cmd.
+Python incluso in entrambi i pacchetti.
+
+Premere "Prova con 7 PDF fittizi" per il caso dimostrativo.
+Nessun invio di documenti a servizi esterni. Gli originali restano invariati.
+OCR non incluso. Esportare l'archivio prima di chiudere DocFlow.
+
+Verifica: versione Mac eseguita su macOS. Pacchetto Windows assemblato e controllato su macOS; prova esecutiva Windows ancora da completare.
+Repository e release da mantenere PRIVATI.
